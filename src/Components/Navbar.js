@@ -1,7 +1,11 @@
-import PropTypes from 'prop-types'
+import pt from 'prop-types'
 export default function Navbar(props) {
+
+const modeText=props.mode=='dark'?'light':"dark";//using variable to change text of switch
+
+  // console.log(props)
   return (
-    <nav className="navbar navbar-dark navbar-expand-lg bg-dark">
+    <nav className={`navbar navbar-${props.mode} navbar-expand-lg bg-${props.mode}`}>
     <div className="container-fluid">
       <a className="navbar-brand" href="/">{props.title}</a>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,14 +35,20 @@ export default function Navbar(props) {
           <input className="form-control me-2"  type="search" placeholder="Search" aria-label="Search"/>
           <button className="btn btn-outline-success" type="submit" >Search</button>
         </form>
+        <div className={`form-check form-switch text-${props.mode=='dark'?'light':"dark"} mx-2`}>
+  <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" onClick={props.toggleMode}/>
+  <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Enable DarkMode</label>
+</div>
+
       </div>
     </div>
   </nav>
   )
 }
+// propTypes and defaultProps are two keyword
 Navbar.propTypes={
-    title:PropTypes.string.isRequired,
-    AboutNav:PropTypes.string
+    title:pt.string.isRequired,
+    aboutNav:pt.number
 }
 Navbar.defaultProps={
     title:"set title here",

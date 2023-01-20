@@ -21,9 +21,14 @@ export default function About() {
     e.target.innerText="enable light mode";
     setClass("btn btn-light my-3");
     setBtn("Enable light")
+    document.querySelector('body').style.background="black";
+    document.querySelector('body').style.color="white";
+    
 }
 else
 {
+    document.querySelector('body').style.background="white";
+    document.querySelector('body').style.color="black";
     setMyStyle(
         { backgroundColor:'white',color:"black",borderRadius:"10px"}
         )
@@ -33,7 +38,7 @@ else
     }
    }
    return (
-       <div className='container' style={styl}>
+       <div className='container' style={{styl}}>
     <h1>About us</h1>
     <div className="accordion" id="accordionExample" >
 <div className="accordion-item" style={styl}>

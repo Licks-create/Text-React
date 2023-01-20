@@ -1,9 +1,9 @@
 import './Abb.css'
-function sigma()
+function Sigma()
 {return(
     <>
     <h1 id='SigmaH1'>This is testing js</h1>
     </>
 )
 }
-export default sigma; 
+export default Sigma; 
