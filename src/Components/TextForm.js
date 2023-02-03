@@ -78,7 +78,7 @@ return (
 
 <h2>Your Text Summary</h2>
 <p>
-<b>{text.split(" ").length}</b>&nbsp; words,&nbsp;
+<b>{text.split(" ").filter((x)=>x.length).length}</b>&nbsp; words,&nbsp;
 <b>{text.length}</b> &nbsp;characters</p>
 <p> <b>{.008*text.split(" ").length} </b> &nbsp; Minutes to read</p>
 
